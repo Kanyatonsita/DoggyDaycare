@@ -2,7 +2,7 @@
   "name": "doggy-daycare",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://[Kanyatonsita].github.io/[DoggyDaycare]",
+  "homepage": "https://[Kanyatonsita].github.io/[DoggyDaycare]/test",
   "type": "module",
   "scripts": {
     "predeploy" : "npm run build",
