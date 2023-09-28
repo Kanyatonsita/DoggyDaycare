@@ -10,23 +10,39 @@ const Catalog = (props) => {
             return res.json();
         })
         .then(data => {
-            console.log(data);
+            console.log('got data: ',data);
             setDogsData(data.record)
         })
         
     }, []);
 
     useEffect(() => {
-
+        // createDogs(dogsData);
     }, [dogsData]);
 
+
+    const createDogs = (dogs) => {
+        return dogs.map(createDogsElement);
+    }
+
+    const createDogsElement = (dog) => {
+        return (
+            <div className='dogsCatalog' key = {dog.name}>
+                <img src={dog.img} alt={dog.name}/>
+                <h2>{dog.name}</h2>
+            </div>
+        );
+    }
+   
     return (
-        <section>
-        <div> Bild</div>
+        <section id="dogs">
+        {createDogs(dogsData)}
         <button onClick={props.showInfo}>Prova knapp</button>
-        </section>
+    </section>
        
     )
+
+    
 }
 
 export default Catalog;
