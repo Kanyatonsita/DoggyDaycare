@@ -30,30 +30,20 @@ const Catalog = (props) => {
     const createDogsElement = (dog) => {
         return (
             <div className='dogsCatalog' key = {dog.name}>
-            
+                
                 <img src={dog.img} alt={dog.name} onClick={() => props.showInfo(dog)}/>
                 <h2 onClick={() => props.showInfo(dog)}>{dog.name}</h2>
+
+                  {/* <p>Age:{dog.age}</p> 
+                  <p>Sex:{dog.sex}</p>
+                  <p>Breed:{dog.breed}</p> */}
+                  <p>Owner: {dog.owner.name} {dog.owner.lastName}</p>
+                  <p>Tel: {dog.owner.phoneNumber}</p>
 
             </div>
         );
     }
 
-     // Använd 'dog'-informationen här för att visa på din 'showInfo'-sida
-    const showInfo = (dog) => {
-        <section>
-        <img src={dog.img}/>
-       <ul> 
-          <li>{dog.name}</li>
-          <li>{dog.age}</li>
-          <li>{dog.breed}</li>
-          <li>{dog.chipNumber}</li>
-          <li>{dog.present}</li>
-          <li>{dog.sex}</li>
-        </ul>
-        </section>
-      
-      }
-   
     return (     
             <section id="dogs">
               <button onClick={props.backToWelcome}>Start sida</button>
