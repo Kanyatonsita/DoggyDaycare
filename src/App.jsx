@@ -21,7 +21,7 @@ function App() {
       content = <Welcome nextScreen={() => setCurrentScreen(CATALOG) }/>;
       break;
     case CATALOG :
-      content = <Catalog showInfo={() => setCurrentScreen(INFO) } />;
+      content = <Catalog backToWelcome={() => setCurrentScreen(WELCOME) } showInfo={() => setCurrentScreen(INFO) } />;
       break;
     case INFO :
       content = <Info goBackToCatalogPage = {goBackToCatalogPage}/>;
