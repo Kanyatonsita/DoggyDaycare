@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import './catalog.css'
+
 
 const Catalog = (props) => {
     const [dogsData, setDogsData] = useState([]);
@@ -28,8 +30,10 @@ const Catalog = (props) => {
     const createDogsElement = (dog) => {
         return (
             <div className='dogsCatalog' key = {dog.name}>
+            
                 <img src={dog.img} alt={dog.name} onClick={() => props.showInfo(dog)}/>
                 <h2 onClick={() => props.showInfo(dog)}>{dog.name}</h2>
+
             </div>
         );
     }
@@ -50,11 +54,12 @@ const Catalog = (props) => {
       
       }
    
-    return (
-        <section id="dogs">
-        <button onClick={props.backToWelcome}>Start sida</button>
-        {createDogs(dogsData)}
-    </section>
+    return (     
+            <section id="dogs">
+              <button onClick={props.backToWelcome}>Start sida</button>
+              {createDogs(dogsData)}
+             </section>
+       
        
     )
 
