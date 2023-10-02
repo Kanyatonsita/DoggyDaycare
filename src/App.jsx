@@ -10,6 +10,13 @@ function App() {
   const WELCOME = 'welcome', CATALOG = 'catalog', INFO = 'info';
   const [currentScreen, setCurrentScreen] = useState(WELCOME);
 
+  const [selectedDog, setSelectedDog] = useState(null);
+
+  const showDogInfo = (dog) => {
+    setSelectedDog(dog);
+    setCurrentScreen(INFO);
+  }
+
   let content = null;
 
   const goBackToCatalogPage = () => {
@@ -21,10 +28,10 @@ function App() {
       content = <Welcome nextScreen={() => setCurrentScreen(CATALOG) }/>;
       break;
     case CATALOG :
-      content = <Catalog backToWelcome={() => setCurrentScreen(WELCOME) } showInfo={() => setCurrentScreen(INFO) } />;
+      content = <Catalog backToWelcome={() => setCurrentScreen(WELCOME) } showInfo={showDogInfo} />;
       break;
     case INFO :
-      content = <Info goBackToCatalogPage = {goBackToCatalogPage}/>;
+      content = <Info goBackToCatalogPage = {goBackToCatalogPage} dog={selectedDog}/>;
       break;
     default :
     content = <Welcome />

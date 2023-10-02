@@ -33,10 +33,6 @@ const Catalog = (props) => {
                 
                 <img src={dog.img} alt={dog.name} onClick={() => props.showInfo(dog)}/>
                 <h2 onClick={() => props.showInfo(dog)}>{dog.name}</h2>
-
-                  {/* <p>Age:{dog.age}</p> 
-                  <p>Sex:{dog.sex}</p>
-                  <p>Breed:{dog.breed}</p> */}
                   <p>Owner: {dog.owner.name} {dog.owner.lastName}</p>
                   <p>Tel: {dog.owner.phoneNumber}</p>
 

@@ -57,9 +57,11 @@
 .dogsCatalog p {
     padding: 0px;
     margin: 0px;
+    color: gray;
 }
 .dogsCatalog p:hover{
     padding: 3px;
+    color: black;
 }
 
 
