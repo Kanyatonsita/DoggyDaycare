@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import './catalog.css'
-
+import noDogImg from'../assets/noDogImg.jpeg'
 
 const Catalog = (props) => {
     const [dogsData, setDogsData] = useState([]);
@@ -31,7 +31,9 @@ const Catalog = (props) => {
         return (
             <div className='dogsCatalog' key = {dog.name}>
                 
-                <img src={dog.img} alt={dog.name} onClick={() => props.showInfo(dog)}/>
+                <img src={dog.img} alt={dog.name} 
+                onError={(e => (e.currentTarget.src = noDogImg))}
+                onClick={() => props.showInfo(dog)}/>
                 <h2 onClick={() => props.showInfo(dog)}>{dog.name}</h2>
                   <p>Owner: {dog.owner.name} {dog.owner.lastName}</p>
                   <p>Tel: {dog.owner.phoneNumber}</p>
@@ -39,7 +41,7 @@ const Catalog = (props) => {
             </div>
         );
     }
-
+    
     return (     
             <section id="dogs">
               <button onClick={props.backToWelcome}>Start sida</button>

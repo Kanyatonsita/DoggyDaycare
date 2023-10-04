@@ -1,4 +1,5 @@
 import './info.css'
+import noDogImg from'../assets/noDogImg.jpeg'
 
 const Info = (props) => {
 
@@ -6,7 +7,8 @@ const Info = (props) => {
     return (
         <section className='info'>
             <h2>🐶 Infomation om {props.dog.name} 🐶</h2>
-            <img src={props.dog.img} alt={props.dog.name}/>
+            <img src={props.dog.img} alt={props.dog.name} 
+            onError={(e => (e.currentTarget.src = noDogImg))}/>
                   <p>🐾 Namn: {props.dog.name}</p>
                   <p>🐾 Age: {props.dog.age}</p> 
                   <p>🐾 Sex: {props.dog.sex}</p>
