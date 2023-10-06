@@ -9,6 +9,7 @@ const Info = (props) => {
             <h2>🐶 Infomation om {props.dog.name} 🐶</h2>
             <img src={props.dog.img} alt={props.dog.name} 
             onError={(e => (e.currentTarget.src = noDogImg))}/>
+            <div className={props.dog.present ? 'green-dot' : 'red-dot'}></div>
                   <p>🐾 Namn: {props.dog.name}</p>
                   <p>🐾 Age: {props.dog.age}</p> 
                   <p>🐾 Sex: {props.dog.sex}</p>

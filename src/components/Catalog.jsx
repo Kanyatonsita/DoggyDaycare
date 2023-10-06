@@ -37,7 +37,7 @@ const Catalog = (props) => {
                 <h2 onClick={() => props.showInfo(dog)}>{dog.name}</h2>
                   <p>Owner: {dog.owner.name} {dog.owner.lastName}</p>
                   <p>Tel: {dog.owner.phoneNumber}</p>
-
+                  <div className={dog.present ? 'green-dot' : 'red-dot'}></div> 
             </div>
         );
     }
